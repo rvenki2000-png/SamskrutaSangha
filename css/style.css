@@ -27,83 +27,67 @@ body {
    Navigation Header (Strict Horizontal Row Layout)
    ========================================================================== */
 
+/* Header container */
 .site-header {
-  background: #FFFFFF;
-  border-bottom: 3px solid var(--maroon-deep);
-  box-shadow: 0 2px 10px rgba(106, 0, 0, 0.08);
+  background-color: #FFFFFF;
+  border-bottom: 3px solid #6A0000;
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
 }
 
+/* Flex wrapper: Logo on left, Nav on right */
 .main-nav {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex !important;
-  flex-direction: row !important;
+  padding: 10px 24px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 24px;
 }
 
-/* Brand Logo + Text */
+/* Logo + Text side-by-side */
 .logo-container {
-  text-decoration: none;
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  text-decoration: none;
 }
 
+/* Constrain logo height so it fits the bar neatly */
 .site-logo {
-  height: 42px;
+  height: 44px;
   width: auto;
-  max-width: 55px;
-  object-fit: contain;
-  display: block;
 }
 
 .logo-text {
   font-family: 'Georgia', serif;
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--maroon-deep);
+  color: #6A0000;
   white-space: nowrap;
 }
 
-/* Force links into a single horizontal row */
+/* The Navigation List: Arranged in a horizontal row */
 .nav-links {
-  display: flex !important;
-  flex-direction: row !important;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  gap: 18px;
+  display: flex;
+  list-style: none;
+  gap: 20px;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
-.nav-links li {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: inline-block !important;
-}
-
+/* Individual Links */
 .nav-links a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: #1C252C;
   font-size: 0.95rem;
   font-weight: 700;
   white-space: nowrap;
-  transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--saffron-terracotta);
+  color: #C83803;
 }
 /* ── 2. Common Typography & Structural Blocks ── */
 .container { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
