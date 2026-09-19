@@ -47,22 +47,22 @@ body {
   z-index: 1000;
 }
 
-/* Flex wrapper: Logo on left, Nav on right */
 .main-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 24px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 32px; /* Fixed padding keeps the logo cleanly pinned to the top-left */
+  box-sizing: border-box;
 }
 
-/* Logo + Text side-by-side */
+/* Brand container sits tight on the left */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  margin-left: 0;
 }
 
 /* Constrain logo height so it fits the bar neatly */
