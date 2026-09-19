@@ -39,12 +39,19 @@ body {
   align-items: center;
   padding: 14px 24px;
 }
-.logo-container { text-decoration: none; display: flex; align-items: center; }
-.logo-text {
-  font-family: 'Georgia', serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--maroon-deep);
+.logo-container { 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 }
 .nav-links {
   display: flex;

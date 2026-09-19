@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Members & Alumni — Samskrita Sangha IISc</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Members — Samskrita Sangha IISc</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
-<!-- ── Navigation Bar ── -->
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="main-nav">
     <a href="index.html" class="logo-container">
-      <img src="images/logo.png" alt="Samskrita Sangha Logo">
-      <span class="logo-text">संस्कृतसङ्घः IISc</span>
+        <img src="images/logo.png" alt="Samskrita Sangha Logo" class="site-logo">
+        <span class="logo-text">संस्कृतसङ्घः IISc</span>
     </a>
-    <ul>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="talks.html">Invited Talks</a></li>
@@ -31,17 +30,11 @@
 <main class="container">
   <span class="section-label">People</span>
   <h1 class="page-title">Members & Volunteers</h1>
-  <p class="page-subtitle">The students, research scholars, and alumni carrying forward our linguistic and cultural initiatives at IISc.</p>
+  <p class="page-subtitle">The students, research scholars, and alumni carrying forward our initiatives at IISc.</p>
 
-  <!-- ═══════════════════ SECTION 1: ACTIVE MEMBERS ═══════════════════ -->
-  <section class="members-section">
-    <div class="section-header-inline">
-      <h2 class="sub-heading">Active Committee & Volunteers</h2>
-      <span class="badge-accent">Current</span>
-    </div>
-
+  <div class="home-block">
+    <h2 class="block-title" style="font-size: 1.5rem; margin-bottom: 16px;">Active Committee & Volunteers</h2>
     <div class="member-grid">
-      <!-- Member 1 -->
       <div class="member-card">
         <div class="member-avatar">RV</div>
         <div class="member-details">
@@ -50,12 +43,11 @@
           <p class="member-dept">PhD, Data Science</p>
           <div class="member-links">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="mailto:example@iisc.ac.in">Email ✉</a>
+            <a href="mailto:samskrutasangha.iisc@gmail.com">Email ✉</a>
           </div>
         </div>
       </div>
 
-      <!-- Member 2 -->
       <div class="member-card">
         <div class="member-avatar">SK</div>
         <div class="member-details">
@@ -64,38 +56,14 @@
           <p class="member-dept">MTech, Electrical Engg</p>
           <div class="member-links">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="mailto:example@iisc.ac.in">Email ✉</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="member-card">
-        <div class="member-avatar">AD</div>
-        <div class="member-details">
-          <h3 class="member-name">Ananya Deshmukh</h3>
-          <span class="member-role">Content & Talks</span>
-          <p class="member-dept">Int-PhD, Physics</p>
-          <div class="member-links">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="mailto:example@iisc.ac.in">Email ✉</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══════════════════ SECTION 2: ALUMNI DIRECTORY ═══════════════════ -->
-  <section class="members-section alumni-wrapper">
-    <div class="section-header-inline">
-      <h2 class="sub-heading">Sangha Alumni Directory</h2>
-      <span class="badge-accent">Past Batches</span>
-    </div>
-    <p class="activity-intro">
-      Former convenors, coordinators, and active volunteers who helped build and nurture the Sangha during their stay at the institute.
-    </p>
-
-    <!-- Batch 2024-2025 -->
+  <div class="home-block">
+    <h2 class="block-title" style="font-size: 1.5rem; margin-bottom: 16px;">Alumni Directory</h2>
     <details class="activity-accordion" open>
       <summary class="accordion-header">
         <div class="header-left">
@@ -104,10 +72,9 @@
         </div>
         <span class="accordion-arrow">▼</span>
       </summary>
-
       <div class="accordion-content">
         <div class="table-responsive">
-          <table class="activity-table alumni-table">
+          <table class="activity-table">
             <thead>
               <tr>
                 <th style="width: 50px;">#</th>
@@ -125,60 +92,16 @@
                 <td>General Convenor</td>
                 <td><a href="https://linkedin.com" target="_blank" class="table-action-link">LinkedIn ↗</a></td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td><strong>Subramanya R.</strong></td>
-                <td>MTech, Computer Science</td>
-                <td>Shibiram Coordinator</td>
-                <td><a href="https://linkedin.com" target="_blank" class="table-action-link">LinkedIn ↗</a></td>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </details>
-
-    <!-- Batch 2022-2023 -->
-    <details class="activity-accordion">
-      <summary class="accordion-header">
-        <div class="header-left">
-          <span class="header-icon">🎓</span>
-          <span class="header-title">Batch of 2022 – 2023</span>
-        </div>
-        <span class="accordion-arrow">▼</span>
-      </summary>
-
-      <div class="accordion-content">
-        <div class="table-responsive">
-          <table class="activity-table alumni-table">
-            <thead>
-              <tr>
-                <th style="width: 50px;">#</th>
-                <th>Name</th>
-                <th>Degree & Department</th>
-                <th>Tenure Role</th>
-                <th style="width: 140px;">Connect</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td><strong>Pranav Joshi</strong></td>
-                <td>MS, Mechanical Engineering</td>
-                <td>Reading Circles Head</td>
-                <td><a href="https://linkedin.com" target="_blank" class="table-action-link">LinkedIn ↗</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </details>
-  </section>
+  </div>
 </main>
 
-<!-- ── Footer ── -->
 <footer>
-  <p>© 2026 Sanskrit Sangha, Indian Institute of Science, Bengaluru</p>
+  <p>© 2026 Samskrita Sangha, Indian Institute of Science, Bengaluru</p>
 </footer>
 
 </body>
