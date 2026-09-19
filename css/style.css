@@ -1,0 +1,648 @@
+:root {
+  /* Canvas Background */
+  --bg-saffron-yellow: #FFF3D0;      /* Your warm saffron-yellow page background */
+  --bg-saffron-tint: #FFE9A7;        /* Deeper accent yellow for badges */
+
+  /* High-Contrast Brand Tones */
+  --maroon-deep: #6A0000;            /* Primary titles, borders, links */
+  --maroon-hover: #4A0000;
+  --saffron-terracotta: #C83803;     /* Timestamps, active markers, accents */
+  --saffron-orange: #E65100;         /* Highlight badges and hover states */
+
+  /* Card Surfaces & Text */
+  --card-surface: #FFFFFF;           /* Pure white to cut through the yellow background */
+  --text-main: #1C252C;              /* High-contrast charcoal text */
+  --text-muted: #546E7A;             /* Secondary descriptive text */
+  --border-contrast: rgba(106, 0, 0, 0.15); /* Maroon-tinted structural border */
+  --card-shadow: 0 4px 18px rgba(106, 0, 0, 0.07);
+}
+
+/* Page Canvas */
+body {
+  background-color: var(--bg-saffron-yellow);
+  color: var(--text-main);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* ── Sticky Header ── */
+header {
+  background: #FFFFFF;
+  border-bottom: 3px solid var(--maroon-deep);
+  box-shadow: 0 2px 10px rgba(106, 0, 0, 0.08);
+}
+.logo-text {
+  color: var(--maroon-deep);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+nav ul li a {
+  color: var(--text-main);
+  font-weight: 600;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--saffron-terracotta);
+}
+
+/* ── Section Titles & Subtitles ── */
+.section-label {
+  color: var(--saffron-terracotta);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.page-title {
+  color: var(--maroon-deep);
+  font-family: 'Georgia', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+.page-subtitle {
+  color: #455A64;
+  font-weight: 500;
+}
+
+/* ── Vertical Timeline (Contrasting Over Yellow) ── */
+.timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 40px auto 60px;
+  padding-left: 36px;
+}
+
+/* Dark, grounded timeline spine */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--maroon-deep), var(--saffron-terracotta));
+  border-radius: 2px;
+}
+
+/* Year Badge */
+.timeline-year {
+  position: relative;
+  margin: 35px 0 20px -36px;
+}
+.timeline-year:first-child {
+  margin-top: 0;
+}
+.timeline-year span {
+  display: inline-block;
+  background: var(--maroon-deep);
+  color: #FFFFFF;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 4px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--bg-saffron-tint);
+  box-shadow: 0 3px 10px rgba(106, 0, 0, 0.25);
+}
+
+/* Timeline Item Node */
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-marker {
+  position: absolute;
+  top: 22px;
+  left: -32px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3.5px solid var(--saffron-terracotta);
+  box-shadow: 0 0 0 3px rgba(200, 56, 3, 0.2);
+  transition: all 0.2s ease;
+}
+.timeline-item:hover .timeline-marker {
+  background: var(--saffron-terracotta);
+  transform: scale(1.25);
+}
+
+/* Content Panel — High-Contrast White Surface */
+.timeline-content {
+  background: var(--card-surface);
+  border: 1px solid var(--border-contrast);
+  border-left: 5px solid var(--maroon-deep);
+  border-radius: 6px;
+  padding: 20px 26px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+}
+.timeline-item:hover .timeline-content {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(106, 0, 0, 0.12);
+  border-left-color: var(--saffron-terracotta);
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--maroon-deep);
+  margin: 0;
+}
+
+/* Crisp Contrasting Date Stamp */
+.timeline-date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--maroon-deep);
+  background: var(--bg-saffron-tint);
+  border: 1px solid rgba(200, 56, 3, 0.2);
+  padding: 2px 12px;
+  border-radius: 12px;
+}
+
+.timeline-desc {
+  font-size: 0.96rem;
+  color: #37474F;
+  margin: 8px 0 12px;
+  line-height: 1.55;
+}
+
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--maroon-deep);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.timeline-link:hover {
+  color: var(--saffron-terracotta);
+  text-decoration: underline;
+}
+
+/* ── Activity Groups & Tables (Contrasting) ── */
+details.activity-group {
+  background: #FFFFFF;
+  border: 1px solid var(--border-contrast);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+details.activity-group summary {
+  background: #FFF9E6;
+  color: var(--maroon-deep);
+  font-weight: 700;
+  padding: 16px 22px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+details[open].activity-group summary {
+  border-bottom: 1px solid var(--border-contrast);
+}
+
+.table-container {
+  background: #FFFFFF;
+  border: 1px solid var(--border-contrast);
+  box-shadow: var(--card-shadow);
+}
+.table-container th {
+  background: var(--maroon-deep);
+  color: #FFFFFF;
+}
+.table-container tr:nth-child(even) {
+  background-color: #FFFDF0;
+}
+/* ==========================================================================
+   Activities Collapsible Drawer System (Contrasting with Saffron-Yellow)
+   ========================================================================== */
+
+/* Outer Dropdown Container */
+details.activity-accordion {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(106, 0, 0, 0.18);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(106, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+/* Hover Accent */
+details.activity-accordion:hover {
+  border-color: #C83803;
+  box-shadow: 0 6px 22px rgba(106, 0, 0, 0.12);
+}
+
+/* Accordion Click Bar (Summary) */
+summary.accordion-header {
+  list-style: none; /* Hide default browser triangle */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #FFFDF8;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 2px solid transparent;
+  transition: background-color 0.2s ease, border-bottom 0.2s ease;
+}
+
+/* Remove default marker in Safari */
+summary.accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+/* Left side: Icon + Topic Name */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.header-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6A0000; /* Deep contrasting maroon */
+}
+
+/* Animated Caret Arrow on the Right */
+.accordion-arrow {
+  color: #C83803;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Active/Open Accordion State */
+details[open].activity-accordion summary.accordion-header {
+  background: #FFE9A7; /* Warm gold accent bar when opened */
+  border-bottom: 2px solid #C83803;
+}
+
+details[open].activity-accordion .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+/* Inner Expanded Area */
+.accordion-content {
+  padding: 24px;
+  background: #FFFFFF;
+}
+
+.activity-intro {
+  font-size: 0.98rem;
+  color: #37474F;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* ── Activity Table Layout ── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Clean horizontal scrolling on mobile */
+  border-radius: 6px;
+  border: 1px solid rgba(106, 0, 0, 0.12);
+}
+
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Solid Maroon Header */
+.activity-table th {
+  background: #6A0000;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 12px 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+/* Table Cells */
+.activity-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(106, 0, 0, 0.08);
+  color: #1C252C;
+  vertical-align: middle;
+}
+
+/* Alternating Rows */
+.activity-table tr:nth-child(even) {
+  background-color: #FFFDF2; /* Subtle off-white cream striping */
+}
+
+.activity-table tr:hover {
+  background-color: #FFF3D0; /* Lights up with yellow theme on hover */
+}
+
+/* Links inside Table */
+.table-action-link {
+  color: #6A0000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+
+.table-action-link:hover {
+  color: #C83803;
+  text-decoration: underline;
+}
+
+/* Student Count Tag */
+.count-badge {
+  display: inline-block;
+  background: #FFF3D0;
+  color: #C83803;
+  border: 1px solid rgba(200, 56, 3, 0.25);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Blogs Table Component (High Contrast on Saffron-Yellow Canvas)
+   ========================================================================== */
+
+/* Brief intro text block */
+.blog-intro-text {
+  max-width: 780px;
+  margin: 0 auto 30px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #37474F;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Card container wrapping the table */
+.blog-table-wrapper {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(106, 0, 0, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(106, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+/* Table styling adjustments */
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header row styling */
+.blog-table th {
+  background: #6A0000; /* Deep maroon */
+  color: #FFFFFF;
+  padding: 14px 18px;
+  font-size: 0.84rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* Row padding & borders */
+.blog-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(106, 0, 0, 0.08);
+  color: #1C252C;
+  vertical-align: middle;
+}
+
+.blog-table tr:nth-child(even) {
+  background-color: #FFFDF4;
+}
+
+.blog-table tr:hover {
+  background-color: #FFF3D0; /* Lights up with warm saffron-yellow on hover */
+}
+
+/* Date tag styling */
+.table-date {
+  font-size: 0.88rem;
+  color: #546E7A;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Topic with subtag */
+.topic-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topic-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1A1A1A;
+  line-height: 1.4;
+}
+
+.topic-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #C83803;
+  background: rgba(200, 56, 3, 0.08);
+  padding: 1px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+/* Read article action button */
+.btn-read-blog {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  color: #6A0000;
+  border: 1.5px solid #6A0000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-read-blog:hover {
+  background: #6A0000;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(106, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Contact Page Layout (High Contrast on Saffron-Yellow Canvas)
+   ========================================================================== */
+
+.contact-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* White Floating Panel */
+.contact-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(106, 0, 0, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(106, 0, 0, 0.08);
+  padding: 35px 30px;
+  margin-top: 10px;
+}
+
+/* Contact List */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 18px;
+  background: #FFFDF8;
+  border: 1px solid rgba(106, 0, 0, 0.1);
+  border-radius: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
+  border-color: #C83803;
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #546E7A;
+  letter-spacing: 0.5px;
+}
+
+.contact-link {
+  color: #6A0000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-link:hover {
+  color: #C83803;
+  text-decoration: underline;
+}
+
+/* Action Buttons */
+.btn-contact-action {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 6px 16px;
+  border-radius: 5px;
+  width: fit-content;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #1EBE5D;
+  transform: translateY(-1px);
+}
+
+.btn-youtube {
+  background: #CC0000;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(204, 0, 0, 0.3);
+}
+
+.btn-youtube:hover {
+  background: #B30000;
+  transform: translateY(-1px);
+}
+
+/* ── Donation / Contribution Section ── */
+.donation-box {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1.5px dashed rgba(106, 0, 0, 0.2);
+  text-align: center;
+}
+
+.donation-heading {
+  font-family: 'Georgia', serif;
+  color: #6A0000;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.donation-subtext {
+  font-size: 0.9rem;
+  color: #546E7A;
+  max-width: 480px;
+  margin: 0 auto 16px;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-image {
+  width: 170px;
+  height: 170px;
+  border: 2px solid rgba(106, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 6px;
+  background: #FFFFFF;
+}
+
+.upi-id {
+  font-size: 0.88rem;
+  color: #1C252C;
+  background: #FFF3D0;
+  padding: 4px 14px;
+  border-radius: 15px;
+  border: 1px solid rgba(200, 56, 3, 0.25);
+}
