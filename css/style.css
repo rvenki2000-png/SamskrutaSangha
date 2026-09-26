@@ -539,8 +539,8 @@ footer {
 }
 
 .hero-emblem {
-  width: 125px;
-  height: auto;
+  width: 150px;
+  height: 150px;
   display: block;
   object-fit: contain;
 }
