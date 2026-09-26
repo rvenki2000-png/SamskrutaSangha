@@ -75,8 +75,10 @@ nav {
 }
 
 .site-logo {
-  height: 44px;
+  height: 52px;       /* Increased from 42px/44px for clear visibility */
   width: auto;
+  max-width: 65px;
+  object-fit: contain;
   display: block;
 }
 
@@ -421,7 +423,27 @@ footer {
 }
 @media (max-width: 768px) {
   .main-nav { flex-direction: column; gap: 12px; }
-  .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--saffron-terracotta);
+}
+
+/* Active Page Highlight: Terracotta badge with white bold text */
+.nav-links a.active {
+  background-color: var(--saffron-terracotta) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(200, 56, 3, 0.25);
+}
   .hero-heading { font-size: 2.1rem; }
   .hero-shloka { font-size: 0.95rem; padding: 10px 16px; }
   .timeline { padding-left: 28px; }
