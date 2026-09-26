@@ -657,3 +657,110 @@ footer {
     text-align: center;
   }
 }
+.mentor-card {
+  padding: 32px;
+  background: var(--card-white);
+  border: 1.5px solid var(--border-subtle);
+  border-left: 6px solid var(--maroon-deep);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+.mentor-layout {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 36px;
+  width: 100%;
+}
+
+/* Left: Bio text takes remaining space */
+.mentor-bio {
+  flex: 1 1 auto;
+  min-width: 0; /* Prevents text overflow from breaking flex layout */
+  text-align: left;
+}
+
+.mentor-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--maroon-deep);
+  margin-bottom: 2px;
+}
+
+.mentor-title {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--saffron-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 18px;
+}
+
+.mentor-text {
+  font-size: 0.98rem;
+  color: #2C3E50;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.mentor-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Right: Portrait fixed-width block */
+.mentor-image-wrap {
+  flex: 0 0 250px !important;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mentor-frame {
+  width: 100%;
+  height: 310px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--border-subtle);
+  box-shadow: 0 6px 18px rgba(106, 0, 0, 0.12);
+  background: var(--bg-gold-tint);
+}
+
+.mentor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.mentor-caption {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Collapse vertically only on narrow mobile screens (< 768px) */
+@media (max-width: 768px) {
+  .mentor-layout {
+    flex-direction: column-reverse !important;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mentor-image-wrap {
+    flex: 0 0 auto !important;
+    width: 200px;
+  }
+
+  .mentor-frame {
+    height: 250px;
+  }
+}
