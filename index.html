@@ -29,11 +29,18 @@
 </header>
 
 <!-- ── Full-Bleed Hero Banner ── -->
+<!-- ── Full-Bleed Hero Banner with Foreground Building Image ── -->
 <section class="hero-banner">
+  <!-- Direct HTML image element guarantees it loads -->
+  <img src="images/main_building.jpg" alt="IISc Main Building" class="hero-bg-img" onerror="this.src='images/main_building.png'">
+  
+  <!-- Warm overlay tint -->
   <div class="hero-overlay"></div>
+
+  <!-- Content Layer -->
   <div class="hero-content">
     
-    <!-- LEFT SIDE: Brand & Logo -->
+    <!-- LEFT: Logo & Sangha Identity -->
     <div class="hero-brand">
       <span class="institute-badge">INDIAN INSTITUTE OF SCIENCE</span>
       <h1 class="hero-title">Samskrita Sangha IISc</h1>
@@ -42,7 +49,7 @@
       </div>
     </div>
 
-    <!-- RIGHT SIDE: Mottos & Verses -->
+    <!-- RIGHT: Mottos & Shlokas -->
     <div class="hero-verses">
       <h2 class="hero-motto">सा विद्या या विमुक्तये</h2>
 
