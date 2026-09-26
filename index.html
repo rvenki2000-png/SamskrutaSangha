@@ -29,21 +29,47 @@
 </header>
 
 <!-- ── Centered Hero Header ── -->
+<!-- ── 3-Column Split Hero Section ── -->
 <section class="hero-section">
-  <div class="hero-inner">
-    <span class="institute-badge">INDIAN INSTITUTE OF SCIENCE</span>
-    <h1 class="hero-heading">Samskrita Sangha IISc</h1>
-    <div class="hero-logo-wrap">
-      <img src="images/logo.png" alt="Samskruta Sangha Emblem" class="hero-logo-large">
+  <div class="hero-split-container">
+    
+    <!-- LEFT: Branding & Emblem -->
+    <div class="hero-left">
+      <span class="institute-badge">INDIAN INSTITUTE OF SCIENCE</span>
+      <h1 class="hero-brand-title">Samskruta Sangha IISc</h1>
+      <div class="hero-emblem-wrap">
+        <img src="images/logo.png" alt="Samskruta Sangha Emblem" class="hero-emblem-img">
+      </div>
     </div>
-    <p class="hero-subtext">सा विद्या या विमुक्तये</p>
-    <p class="hero-shloka">
-      वाक्यकारं वररुचिं भाष्यकारं पतञ्जलिम्।<br>
-      पाणिनिं सूत्रकारं च प्रणतोऽस्मि मुनित्रयम् ॥
-    </p>
-  </div>
-</section>
 
+    <!-- CENTER: Mottos & Sacred Shlokas -->
+    <div class="hero-center">
+      <h2 class="hero-motto">सा विद्या या विमुक्तये</h2>
+      
+      <!-- Bhashasu Mukhya Shloka -->
+      <div class="shloka-box">
+        <p class="shloka-text">
+          भाषासु मुख्या मधुरा दिव्या गीर्वाणभारती।<br>
+          तस्यां हि काव्यं मधुरं तस्मादपि सुभाषितम् ॥
+        </p>
+      </div>
+
+      <!-- Vakyakaram Shloka -->
+      <div class="shloka-box shloka-secondary">
+        <p class="shloka-text">
+          वाक्यकारं वररुचिं भाष्यकारं पतञ्जलिम्।<br>
+          पाणिनिं सूत्रकारं च प्रणतोऽस्मि मुनित्रयम् ॥
+        </p>
+      </div>
+    </div>
+  <div class="hero-right">
+      <div class="tower-frame">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/IISc_Tower.jpg/640px-IISc_Tower.jpg" 
+             alt="IISc Faculty Hall Tower" 
+             class="tower-img"
+             onerror="this.src='https://placehold.co/400x500/FFFDF8/6A0000?text=IISc+Faculty+Hall'">
+      </div>
+    </div>
 <main class="container">
 
   <!-- ════════════ 1. UPCOMING TALKS (MAX 2) ════════════ -->
@@ -175,7 +201,41 @@
       <a href="activities.html" class="btn-see-more">View All Activities & Notes →</a>
     </div>
   </section>
+<!-- ── Bottom Fade-In / Fade-Out Quote Rotator ── -->
+<section class="quotes-banner">
+  <div class="quotes-inner">
+    <div class="quote-slide active">
+      <p class="quote-text">“The Sanskrit language is the very train with which the culture of India travels. Teach Sanskrit to everyone; along with it comes the foundation of self-respect, culture, and deep philosophical inquiry.”</p>
+      <span class="quote-author">— Swami Vivekananda</span>
+    </div>
 
+    <div class="quote-slide">
+      <p class="quote-text">“Sanskrit is not merely a language; it is a repository of our ancient wisdom in science, mathematics, medicine, and philosophy. Understanding it bridges our civilizational roots with contemporary scientific pursuits.”</p>
+      <span class="quote-author">— Dr. A. P. J. Abdul Kalam</span>
+    </div>
+
+    <div class="quote-slide">
+      <p class="quote-text">“The Sanscrit language, whatever be its antiquity, is of a wonderful structure; more perfect than the Greek, more copious than the Latin, and more exquisitely refined than either.”</p>
+      <span class="quote-author">— Sir William Jones</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Simple Vanilla JS Rotator ── -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".quote-slide");
+    let currentIndex = 0;
+    
+    if (slides.length > 1) {
+      setInterval(() => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add("active");
+      }, 6000); // Transitions smoothly every 6 seconds
+    }
+  });
+</script>
 </main>
 
 </body>
