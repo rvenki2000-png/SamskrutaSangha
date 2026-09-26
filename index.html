@@ -32,27 +32,31 @@
 
 <!-- ── Full-Bleed Hero Banner ── -->
 <!-- ── Full-Bleed Hero Banner with Foreground Building Image ── -->
-<section class="hero-banner">
-  <!-- Direct HTML image element guarantees it loads -->
-  <img src="images/main_building.jpg" alt="IISc Main Building" class="hero-bg-img" onerror="this.src='images/main_building.png'">
+<!-- ── Split Hero Banner ── -->
+<section class="hero-split-banner">
   
-  <!-- Warm overlay tint -->
-  <div class="hero-overlay"></div>
-
-  <!-- Content Layer -->
-  <div class="hero-content">
-    
-    <!-- LEFT: Logo & Sangha Identity -->
-    <div class="hero-brand">
-      <span class="institute-badge">INDIAN INSTITUTE OF SCIENCE</span>
-      <h1 class="hero-title">Samskrita Sangha IISc</h1>
-      <div class="hero-emblem-wrap">
-        <img src="images/logo.png" alt="Samskrita Sangha Emblem" class="hero-emblem">
-      </div>
+  <!-- LEFT PANEL: Clean White Background for Brand & Emblem -->
+  <div class="hero-left-panel">
+    <span class="institute-badge">INDIAN INSTITUTE OF SCIENCE</span>
+    <h1 class="hero-title">Samskrita Sangha IISc</h1>
+    <div class="hero-emblem-wrap">
+      <img src="images/logo.png" alt="Samskrita Sangha Emblem" class="hero-emblem">
     </div>
+  </div>
 
-    <!-- RIGHT: Mottos & Shlokas -->
-    <div class="hero-verses">
+  <!-- RIGHT PANEL: Building Background + Shlokas -->
+  <div class="hero-right-panel">
+    <!-- Building Image restricted solely to this right container -->
+    <img src="images/main_building.jpg" 
+         alt="IISc Main Building" 
+         class="hero-bg-img" 
+         onerror="this.onerror=null; this.src='images/main_building.png';">
+    
+    <!-- Warm overlay for text contrast -->
+    <div class="hero-overlay"></div>
+
+    <!-- Shlokas & Motto Layer -->
+    <div class="hero-verses-content">
       <h2 class="hero-motto">सा विद्या या विमुक्तये</h2>
 
       <div class="verse-card">
@@ -69,8 +73,8 @@
         </p>
       </div>
     </div>
-
   </div>
+
 </section>
 <main class="container">
 
