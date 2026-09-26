@@ -429,3 +429,22 @@ footer {
   .timeline-marker { left: -27px; }
   .timeline-year { margin-left: -28px; }
 }
+.hero-logo-wrap {
+  margin: 18px 0 14px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-large {
+  width: 140px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(106, 0, 0, 0.12));
+  transition: transform 0.25s ease;
+}
+
+.hero-logo-large:hover {
+  transform: scale(1.04);
+}
