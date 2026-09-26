@@ -437,32 +437,43 @@ footer {
    Hero Banner: IISc Main Building Background + Glassmorphic Overlay
    ========================================================================== */
 
+/* ==========================================================================
+   Hero Banner: IISc Main Building Background + Side-by-Side Content
+   ========================================================================== */
+
 .hero-banner {
   position: relative;
   width: 100%;
-  min-height: 480px;
-  /* Adjust extension (.jpg / .png) to match your local file in images/ */
-  background: url('../images/main_building.jpg') center center / cover no-repeat;
+  min-height: 460px;
+  /* Checks for jpg or png in images/ relative to css/ */
+  background-color: var(--bg-gold-tint);
+  background-image: url('../images/main_building.jpg'), url('../images/main_building.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-bottom: 3px solid var(--maroon-deep);
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-/* Semi-transparent warm gradient ensures text pops while building shows through */
+/* Semi-transparent warm overlay so building remains visible and text readable */
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(
     135deg,
     rgba(255, 253, 245, 0.88) 0%,
     rgba(255, 243, 208, 0.82) 50%,
-    rgba(255, 233, 167, 0.78) 100%
+    rgba(255, 233, 167, 0.75) 100%
   );
   z-index: 1;
 }
 
-/* Two-column container sitting above the background */
+/* Strictly enforces side-by-side horizontal row layout */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -470,42 +481,43 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 24px;
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  box-sizing: border-box;
 }
 
 /* ── LEFT: Sangha Brand Block ── */
 .hero-brand {
-  flex: 1;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
 }
 
 .hero-title {
   font-family: 'Georgia', serif;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--maroon-deep);
   line-height: 1.15;
   margin: 8px 0 16px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero-emblem-wrap {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.75);
   border: 1.5px solid rgba(106, 0, 0, 0.15);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   padding: 12px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(106, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(106, 0, 0, 0.1);
+  display: inline-block;
 }
 
 .hero-emblem {
-  width: 130px;
+  width: 125px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -513,7 +525,7 @@ footer {
 
 /* ── RIGHT: Motto & Verses ── */
 .hero-verses {
-  flex: 1.2;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -527,50 +539,99 @@ footer {
   color: var(--saffron-terracotta);
   text-align: center;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+  margin-bottom: 2px;
 }
 
-/* Translucent frosted glass effect for shlokas */
 .verse-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.90);
   border: 1.5px dashed var(--saffron-terracotta);
-  border-radius: 10px;
-  padding: 14px 22px;
-  box-shadow: 0 4px 14px rgba(106, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 14px 20px;
+  box-shadow: 0 4px 12px rgba(106, 0, 0, 0.08);
   text-align: center;
 }
 
 .verse-card-secondary {
   border-color: rgba(106, 0, 0, 0.3);
-  background: rgba(255, 253, 245, 0.85);
+  background: rgba(255, 253, 245, 0.90);
 }
 
 .verse-text {
   font-family: 'Georgia', serif;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--maroon-deep);
-  line-height: 1.8;
+  line-height: 1.75;
   margin: 0;
 }
 
-/* Responsive collapse for phones & narrow viewports */
-@media (max-width: 860px) {
+/* ==========================================================================
+   Bottom English Quotes Rotator (Fade In / Fade Out)
+   ========================================================================== */
+
+.quotes-banner {
+  background: var(--card-white);
+  border-top: 1.5px solid var(--border-subtle);
+  border-bottom: 1.5px solid var(--border-subtle);
+  padding: 36px 20px;
+  margin-top: 50px;
+  box-shadow: 0 2px 10px rgba(106, 0, 0, 0.04);
+}
+
+.quotes-inner {
+  max-width: 850px;
+  min-height: 110px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  text-align: center;
+}
+
+.quote-slide.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-text {
+  font-family: 'Georgia', serif;
+  font-size: 1.12rem;
+  font-style: italic;
+  color: #2C3E50;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--saffron-terracotta);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 820px) {
   .hero-content {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
-    padding: 30px 16px;
-    gap: 28px;
+    gap: 24px;
   }
   .hero-brand {
     align-items: center;
-  }
-  .hero-title {
-    font-size: 2.1rem;
-  }
-  .hero-verses {
-    width: 100%;
+    text-align: center;
   }
 }
